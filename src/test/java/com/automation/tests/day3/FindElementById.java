@@ -30,6 +30,9 @@ public class FindElementById {
         WebElement logout = driver.findElement(By.partialLinkText("Logout"));
         logout.click();
         Thread.sleep(2000);
+
+
+
         driver.quit();
 
 
