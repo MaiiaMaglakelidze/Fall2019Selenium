@@ -1,4 +1,4 @@
-package com.cbt.utilities;
+package com.automation.tests.homework;
 
 import org.openqa.selenium.WebDriver;
 

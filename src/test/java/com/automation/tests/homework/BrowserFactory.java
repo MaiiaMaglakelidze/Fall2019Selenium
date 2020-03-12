@@ -1,4 +1,4 @@
-package com.cbt.utilities;
+package com.automation.tests.homework;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

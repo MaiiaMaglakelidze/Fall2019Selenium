@@ -31,7 +31,15 @@ public class FindElementById {
         logout.click();
         Thread.sleep(2000);
 
+        // let's enter invalid credentials
+        driver.findElement(By.name("username")).sendKeys("wrong");
+        driver.findElement(By.name("password")).sendKeys("wrong");
+        driver.findElement(By.id("wooden_spoon")).click();
 
+        Thread.sleep(3000);
+        WebElement errorMessage = driver.findElement(By.id("flash-messages"));
+        System.out.println("errorMessage = " + errorMessage.getText());
+        Thread.sleep(3000);
 
         driver.quit();
 

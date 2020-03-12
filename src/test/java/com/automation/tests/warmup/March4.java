@@ -11,9 +11,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class March4 {
 
     public static void main(String[] args) throws Exception {
-//    ebayTest();
-//    amazonTest();
-    wikiTest();
+    ebayTest();
+    amazonTest();
+//    wikiTest();
 
 
     }
@@ -24,7 +24,7 @@ public class March4 {
             WebDriver driver = new ChromeDriver();
             driver.get("https://www.ebay.com");
             WebElement searchBar = driver.findElement(By.id("gh-ac"));
-            searchBar.sendKeys("java book");
+            searchBar.sendKeys("iPhone X");
             WebElement searchButton = driver.findElement(By.id("gh-btn"));
             searchButton.click();
 
@@ -38,7 +38,7 @@ public class March4 {
              WebDriverManager.chromedriver().setup();
              WebDriver driver = new ChromeDriver();
              driver.get("https://www.amazon.com");
-             driver.findElement(By.id("twotabsearchtextbox")).sendKeys("java book");
+             driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iPhone X");
              Thread.sleep(3000);
              driver.findElement(By.className("nav-input")).click();
              WebElement searchResult = driver.findElement(By.className("sg-col-inner"));
@@ -64,6 +64,8 @@ public class March4 {
         }else {
             System.out.println("TEST FAILED");
         }
+
+        Thread.sleep(4000);
         driver.quit();
     }
 }

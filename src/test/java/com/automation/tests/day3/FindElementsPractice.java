@@ -6,17 +6,17 @@ import org.openqa.selenium.WebElement;
 
 public class FindElementsPractice {
     public static void main(String[] args) throws InterruptedException {
-//we are writing same codes again and again
-//we will write a method and call it : DRY Principle
-//sth that support our code : utilities
-//under automation package
-//We created utilities package and DriverFactory class under automation package
-//we wrote reusable methods inside DriverFactory class named => createDriver
-//whenever we need to crate webDriver object
-//we will call our custom method
+//      we are writing same codes again and again
+//      we will write a method and call it : DRY Principle
+//      smth that support our code : utilities
+//      under automation package
+//      We created utilities package and DriverFactory class under automation package
+//      we wrote reusable methods inside DriverFactory class named => createDriver
+//      whenever we need to crate webDriver object
+//      we will call our custom method
 /*
-WebDriverManager.chromedriver().setup();
-WebDriver driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
  */
 
         WebDriver driver = DriverFactory.createADriver("chrome");

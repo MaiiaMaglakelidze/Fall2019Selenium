@@ -13,7 +13,6 @@ public class DriverFactory {
         } else {
             WebDriverManager.firefoxdriver().setup();
             return new FirefoxDriver();
-
         }
     }
 }
