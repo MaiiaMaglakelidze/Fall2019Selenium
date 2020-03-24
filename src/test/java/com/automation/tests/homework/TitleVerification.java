@@ -1,6 +1,6 @@
 package com.automation.tests.homework;
 
-import com.cbt.utilities.StringUtility;
+import com.automation.utilities.StringUtility;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Arrays;

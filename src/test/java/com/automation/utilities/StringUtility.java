@@ -1,4 +1,4 @@
-package com.cbt.utilities;
+package com.automation.utilities;
 
 public class StringUtility {
     public static String verifyEquals(String expected, String actual){

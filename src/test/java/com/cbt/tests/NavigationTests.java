@@ -1,7 +1,7 @@
 package com.cbt.tests;
 
 import com.automation.tests.homework.BrowserFactory;
-import com.cbt.utilities.StringUtility;
+import com.automation.utilities.StringUtility;
 import org.openqa.selenium.WebDriver;
 
 public class NavigationTests {
