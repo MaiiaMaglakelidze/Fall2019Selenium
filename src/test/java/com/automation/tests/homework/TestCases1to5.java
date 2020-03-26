@@ -10,6 +10,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class TestCases1to5 {
     private WebDriver driver;
 
@@ -31,10 +34,26 @@ public class TestCases1to5 {
         String expected = "The date of birth is not valid";
         String actual = driver.findElement(By.xpath("//*[@id=\"registrationForm\"]/div[8]/div/small[2]")).getText();
         Assert.assertEquals(expected,actual);
+    }
 
+    @Test
+    public void testCase2(){
+        List<String> expectedLst = Arrays.asList("C++", "Java", "JavaScript");
+        List<WebElement> actual = driver.findElements(By.className("col-sm-3 control-label"));
+        for (WebElement each : actual) {
+            System.out.println("each = " + each.getText());
+        }
+        for (int i = 0; i < actual.size(); i++) {
+            Assert.assertEquals(actual.get(i).getText(), expectedLst.get(i));
 
+    }
+    }
 
-
+    @Test
+    public void testCase3(){
+        driver.findElement(By.name("firstname")).sendKeys("a");
+        WebElement errorMsg = driver.findElement(By.xpath("//*[@id=\"registrationForm\"]/div[1]/div/small[2]"));
+        Assert.assertTrue(errorMsg.isDisplayed());
 
     }
 
