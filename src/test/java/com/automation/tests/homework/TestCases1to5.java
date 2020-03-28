@@ -1,10 +1,11 @@
 package com.automation.tests.homework;
 
-import com.automation.tests.day3.DriverFactory;
+import com.automation.utilities.DriverFactory;
 import com.cbt.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -18,7 +19,7 @@ public class TestCases1to5 {
 
     @BeforeMethod
     public void setup() {
-        driver = DriverFactory.createADriver("chrome");
+        driver = DriverFactory.createDriver("chrome");
         driver.get("https://practice-cybertekschool.herokuapp.com");
         driver.manage().window().maximize();
         WebElement regForm = driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[40]/a"));
@@ -57,7 +58,50 @@ public class TestCases1to5 {
 
     }
 
-@AfterMethod
+    @Test
+    public void testCase4() {
+        driver.findElement(By.name("lastname")).sendKeys("a");
+        WebElement errorMsg2 = driver.findElement(By.xpath("//*[@id=\"registrationForm\"]/div[2]/div/small[2]"));
+        Assert.assertTrue(errorMsg2.isDisplayed());
+    }
+/*
+
+Step 6. Enter any valid password.
+Step 7. Enter any valid phone number.
+Step 8. Select gender.
+Step 9. Enter any valid date of birth.
+Step 10. Select any department.
+Step 11. Enter any job title.
+Step 12. Select java as a programming language.
+Step 13. Click Sign up.
+Step 14. Verify that following success message is
+displayed: “You've successfully completed
+registration!”
+ */
+    @Test
+    public void testCase5(){
+        driver.findElement(By.name("firstname")).sendKeys("Tom");
+        driver.findElement(By.name("lastname")).sendKeys("Hanks");
+        driver.findElement( By.name("username")).sendKeys("tomhanks");
+        driver.findElement(By.name("email")).sendKeys("tomhanks@gmail.com");
+        driver.findElement(By.name("password")).sendKeys("SuperSecretPassword");
+        driver.findElement(By.name("phone")).sendKeys("619-519-5959");
+        driver.findElement(By.xpath("//input[@value=\"male\"]")).click();
+        driver.findElement(By.name("birthday")).sendKeys("05/25/1980");
+        Select depSelect = new Select(driver.findElement(By.name("department")));
+        depSelect.selectByValue("DE");
+        Select jobSelect = new Select(driver.findElement(By.name("job_title")));
+        jobSelect.selectByVisibleText("SDET");
+        driver.findElement(By.xpath("//input[@id=\"inlineCheckbox2\"]")).click();
+        driver.findElement(By.xpath("//button[@id=\"wooden_spoon\"]")).click();
+        BrowserUtils.wait(3);
+        WebElement wellDone = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/p"));
+        Assert.assertTrue(wellDone.isDisplayed());
+
+
+    }
+
+    @AfterMethod
     public void tearDown(){
         BrowserUtils.wait(3);
         driver.quit();
