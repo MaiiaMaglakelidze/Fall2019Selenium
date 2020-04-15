@@ -64,20 +64,7 @@ public class TestCases1to5 {
         WebElement errorMsg2 = driver.findElement(By.xpath("//*[@id=\"registrationForm\"]/div[2]/div/small[2]"));
         Assert.assertTrue(errorMsg2.isDisplayed());
     }
-/*
 
-Step 6. Enter any valid password.
-Step 7. Enter any valid phone number.
-Step 8. Select gender.
-Step 9. Enter any valid date of birth.
-Step 10. Select any department.
-Step 11. Enter any job title.
-Step 12. Select java as a programming language.
-Step 13. Click Sign up.
-Step 14. Verify that following success message is
-displayed: “You've successfully completed
-registration!”
- */
     @Test
     public void testCase5(){
         driver.findElement(By.name("firstname")).sendKeys("Tom");

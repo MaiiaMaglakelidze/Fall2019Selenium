@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
 
 //STATIC IMPORT OF ALL ASSERTIONS
-public class LoginPageTests {
+public class LoginTests {
     private WebDriver driver;
     //https is a secured version of http protocol
     //http - it's hypertext transfer protocol that every single website is using now days
